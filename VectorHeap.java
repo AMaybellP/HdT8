@@ -20,30 +20,28 @@ public class VectorHeap<E>{
 			}
 		}
 		
-	
-	
-	protected static int parent(int i) 
+	public int parent(int i) 
 	// pre: 0 <= i < size 
 	// post: returns parent of node at location i 
 	{ 
 		return (i-1)/2; 
 	}
 	
-	protected static int left(int i) 
+	public int left(int i) 
 	// pre: 0 <= i < size 
 	// post: returns index of left child of node at location i 
 	{ 
 		return 2*i+1; 
-		}
+	}
 	
-	protected static int right(int i) 
+	public int right(int i) 
 	// pre: 0 <= i < size 
 	// post: returns index of right child of node at location i 
 	{ 
 		return 2*(i+1); 
-		}
+	}
 
-	protected void percolateUp(int leaf) 
+	public void percolateUp(int leaf) 
 	// pre: 0 <= leaf < size 
 	// post: moves node at index leaf up to appropriate position 
 	{ 
@@ -52,7 +50,8 @@ public class VectorHeap<E>{
 		while (leaf > 0 && (value.compareTo(data.get(parent)) < 0)) 
 		{
 			data.set(leaf,data.get(parent)); 
-			leaf = parent; parent = parent(leaf); 
+			leaf = parent; 
+			parent = parent(leaf); 
 			} 
 		data.set(leaf,value); 
 		}
@@ -101,23 +100,23 @@ public class VectorHeap<E>{
 		}
 	
 
-public E remove() 
-// pre: !isEmpty() 
-// post: returns and removes minimum value from queue 
-{ 
-	E minVal = getFirst(); 
-	data.set(0,data.get(data.size()-1)); 
-	data.setSize(data.size()-1); 
-	if (data.size() > 1) 
-		pushDownRoot(0); 
-	return minVal; 
-}
+	public E remove() 
+	// pre: !isEmpty() 
+	// post: returns and removes minimum value from queue 
+	{ 
+		E minVal = getFirst(); 
+		data.set(0,data.get(data.size()-1)); 
+		data.setSize(data.size()-1); 
+		if (data.size() > 1) 
+			pushDownRoot(0); 
+		return minVal; 
+	}
 
-public E getFirst() 
-// pre: !isEmpty() 
-// post: returns the minimum value in priority queue 
-{ 
-	return data.get(0); 
+	public E getFirst() 
+	// pre: !isEmpty() 
+	// post: returns the minimum value in priority queue 
+	{ 
+		return data.get(0); 
 	}
 	
 
