@@ -1,7 +1,7 @@
 import java.util.Vector;
 import java.util.PriorityQueue;
 
-public class VectorHeap<E>{
+public class VectorHeap<E extends Comparable<E>> extends PriorityQueue<E>{
 	private Vector<E> data;
 	
 	
@@ -56,12 +56,12 @@ public class VectorHeap<E>{
 		data.set(leaf,value); 
 		}
 	
-	public void add(E value) 
+	public boolean add(E value) 
 	// pre: value is non-null comparable 
 	// post: value is added to priority queue 
 	{ 
-		data.add(value); 
 		percolateUp(data.size()-1); 
+		return true;
 	}
 	
 	protected void pushDownRoot(int root) 
@@ -118,6 +118,8 @@ public class VectorHeap<E>{
 	{ 
 		return data.get(0); 
 	}
+
+
 	
 
 	
