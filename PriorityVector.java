@@ -8,7 +8,7 @@ import java.util.Vector;
  * @version $Id: PriorityVector.java 22 2006-08-21 19:27:26Z bailey $
  * @a
  */
-public class PriorityVector<E extends Comparable<E>> implements PriorityQueue<E>
+public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 {
     /**
      * The vector of data that is maintained in increasing order.
