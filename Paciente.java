@@ -85,7 +85,7 @@ public class Paciente implements Comparable<Paciente>{
 				}
 			}
 			int j = 0;
-			PriorityVector VectorH = new PriorityVector();
+			VectorHeap VectorH = new VectorHeap();
 		for(j = 0; j< pacientes.size(); j++){
 			VectorH.add(pacientes.get(j));;
 		}
