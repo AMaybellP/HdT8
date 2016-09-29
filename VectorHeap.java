@@ -25,8 +25,19 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
     {
         data = new Vector<E>();
     }
+    
 
-    /**
+    public Vector<E> getData() {
+		return data;
+	}
+
+
+	public void setData(Vector<E> data) {
+		this.data = data;
+	}
+
+
+	/**
      * Fetch the smallest value of the priority queue.
      *
      * @pre !isEmpty()
