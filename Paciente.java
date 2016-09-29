@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Paciente implements Comparable<Paciente>{
 	
@@ -21,9 +22,11 @@ public class Paciente implements Comparable<Paciente>{
 		codigo= c;
 	}
 
+	
 	public void nuevoPaciente(){
         String lista= "";
-        ArrayList<Paciente> pacientes= new ArrayList<Paciente>();
+        Vector<Paciente> pacientes= new Vector<Paciente>();
+        
         try {
 	         File file = new File("Pacientes.txt");
 	         Scanner scanner = new Scanner(file);
@@ -31,7 +34,8 @@ public class Paciente implements Comparable<Paciente>{
 	        	lista=lista+"/"+scanner.nextLine();
 	         }
 	         scanner.close();
-	       } catch (FileNotFoundException e) {
+	       } 
+        catch (FileNotFoundException e) {
 	         e.printStackTrace();
 	       }
         
@@ -39,7 +43,7 @@ public class Paciente implements Comparable<Paciente>{
         String s="";
         char c;
         Paciente paciente;
-        System.out.println(lista);
+        //System.out.println(lista);
         char[] cadena= lista.toCharArray();
 		int r=0;
 		for (char i: cadena)
@@ -58,9 +62,9 @@ public class Paciente implements Comparable<Paciente>{
 					{
 						c=i;
 						paciente= new Paciente(n,s,c);
-						System.out.println(paciente.toString());
+						//System.out.println(paciente.toString());
 						pacientes.add(paciente);
-						System.out.println("hashCode: "+paciente.hashCode());
+						//System.out.println("hashCode: "+paciente.hashCode());
 					}
 				}
 				if(i!=','&& r==1)
@@ -75,13 +79,20 @@ public class Paciente implements Comparable<Paciente>{
 				{
 					n=n+i;
 				}
-				if (i==','&& r==0)
-				{
+				if (i==','&& r==0){
 					r=1;
+					}
 				}
 			}
+			int j = 0;
+			PriorityVector VectorH = new PriorityVector();
+		for(j = 0; j< pacientes.size(); j++){
+			VectorH.add(pacientes.get(j));;
 		}
-	}
+		System.out.print(VectorH.toString());
+		}
+		
+	
 	
 	public String toString()
 	{
