@@ -8,7 +8,7 @@
  * @version $Id: FailedPostcondition.java 22 2006-08-21 19:27:26Z bailey $
  * @author, 2001 duane a. bailey
  */
-class FailedPostcondition extends FailedAssertion
+class FailedPostCondition extends FailedAssertion
 {
     final static long serialVersionUID = 0L;
     /**
@@ -18,7 +18,7 @@ class FailedPostcondition extends FailedAssertion
      * 
      * @param reason String describing postcondition.
      */
-    public FailedPostcondition(String reason)
+    public FailedPostCondition(String reason)
     {
         super("\nA postcondition: " + reason);
     }

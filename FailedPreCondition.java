@@ -9,7 +9,7 @@
  * @author, 2001 duane a. bailey
  * @see Assert#pre
  */
-class FailedPrecondition extends FailedAssertion
+class FailedPreCondition extends FailedAssertion
 {
     final static long serialVersionUID = 0L;
     /**
@@ -19,7 +19,7 @@ class FailedPrecondition extends FailedAssertion
      * 
      * @param reason String describing precondition.
      */
-    public FailedPrecondition(String reason)
+    public FailedPreCondition(String reason)
     {
         super("\nA precondition: " + reason);
     }

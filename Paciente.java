@@ -85,7 +85,7 @@ public class Paciente implements Comparable<Paciente>{
 				}
 			}
 			int j = 0;
-			VectorHeap VectorH = new VectorHeap();
+			PriorityVector<Paciente> VectorH = new PriorityVector<Paciente>();
 		for(j = 0; j< pacientes.size(); j++){
 			VectorH.add(pacientes.get(j));;
 		}
@@ -96,7 +96,7 @@ public class Paciente implements Comparable<Paciente>{
 	
 	public String toString()
 	{
-		return "PACIENTE:\nNombre: "+nombre+"\n"+"Sintoma: "+sintoma+"\n"+"Codigo: "+ codigo;
+		return nombre+","+sintoma+", "+codigo;
 	}
 
 	public int hashCode()

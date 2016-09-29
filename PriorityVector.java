@@ -1,4 +1,5 @@
 import java.util.Vector;
+import java.lang.*;
 
 /**
  * A vector-based implementation of a priority queue.  Similar to
@@ -8,7 +9,7 @@ import java.util.Vector;
  * @version $Id: PriorityVector.java 22 2006-08-21 19:27:26Z bailey $
  * @a
  */
-public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
+public class PriorityVector<E extends Comparable<E>> implements PriorityQueue<E>
 {
     /**
      * The vector of data that is maintained in increasing order.
@@ -20,7 +21,7 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
      *
      * @post constructs a new priority queue
      */
-    public VectorHeap()
+    public PriorityVector()
     {
         data = new Vector<E>();
     }
@@ -128,6 +129,12 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
      */
     public String toString()
     {
-        return "<PriorityVector: "+data+">";
+    	String s="";
+    	for (int i=0; i<data.size(); i++)
+    	{
+    		s= s+ data.get(i).toString()+"\n";
+    	}
+        return "\nLos pacientes deben ser atendidos en el siguiente orden: \n\n"+s+"\n";
+        
     }
 }

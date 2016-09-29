@@ -33,7 +33,7 @@ public class Assert
     /**
      * @pre An Assert cannot be constructed
      */
-    private Assert()
+    public Assert()
     {
         Assert.fail("Attempt to construct an Assert!?");
     }
@@ -99,7 +99,7 @@ public class Assert
      */
     static public void pre(boolean test, String message)
     {
-        if (test == false) throw new FailedPrecondition(message);
+        if (test == false) throw new FailedPreCondition(message);
     }
 
     /**
@@ -116,7 +116,7 @@ public class Assert
     static public void post(boolean test, String message)
     {
         if (test == false) {
-            throw new FailedPostcondition(message);
+            throw new FailedPostCondition(message);
         }
     }
 
