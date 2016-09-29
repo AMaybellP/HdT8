@@ -20,7 +20,7 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
      *
      * @post constructs a new priority queue
      */
-    public PriorityVector()
+    public VectorHeap()
     {
         data = new Vector<E>();
     }
