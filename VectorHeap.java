@@ -5,8 +5,9 @@ import java.util.Vector;
  * an ordered vector, except that only the smallest value may be
  * accessed in this structure.
  * @see structure.OrderedVector
- * @version $Id: PriorityVector.java 22 2006-08-21 19:27:26Z bailey $
- * @a
+ * @version $Id: PriorityVector.java 22 2006-08-21 19:27:26
+ * @author Z bailey $
+ * Modificada por: Andrea Maybell Pena 15127 // Steven Rubio, 15044 
  */
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>
 {
