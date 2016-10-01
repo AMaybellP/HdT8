@@ -113,8 +113,9 @@ public class Paciente2 implements Comparable<Paciente2>{
 					}
 				}
 			int j;
+			Object x[] = pacientes.toArray();
 			for(j = 0; j< pacientes.size(); j++){
-			System.out.print(pacientes.poll().toString());
+			System.out.println(x[pacientes.size()-1-j]);
 			
 			}
 		}
