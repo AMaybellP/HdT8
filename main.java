@@ -10,6 +10,8 @@ public class main {
 	public static void main(String[] args)
 	{
 		Paciente p1= new Paciente();
+		System.out.println("---------------------");
+		Paciente2 p2 = new Paciente2(); 
 	}
 
 }
