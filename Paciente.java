@@ -49,7 +49,7 @@ public class Paciente implements Comparable<Paciente>{
  	 */
 	public void nuevoPaciente(){
         String lista= "";
-        Vector<Paciente> pacientes= new Vector<Paciente>();
+        VectorHeap<Paciente> pacientes= new VectorHeap<Paciente>();
         
         //lectura del .txt
         try {
@@ -109,16 +109,8 @@ public class Paciente implements Comparable<Paciente>{
 					}
 				}
 			}
-		
-			int j = 0;
-			//se crea el vector Heap
-			VectorHeap<Paciente> VectorH = new VectorHeap<Paciente>();
-		//se pasan los pacientes del Vector al VectorHeap
-		for(j = 0; j< pacientes.size(); j++){
-			VectorH.add(pacientes.get(j));;
-		}
 		//Se imprime el VectorHeap
-		System.out.print(VectorH.toString());
+		System.out.print(pacientes.toString());
 		}
 		
 	

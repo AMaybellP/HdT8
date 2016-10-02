@@ -7,11 +7,11 @@
 
 	
 import java.io.File;
-	import java.io.FileNotFoundException;
-	import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Scanner;
-	import java.util.Vector;
+import java.util.Vector;
 	
 public class Paciente2 implements Comparable<Paciente2>{
 
@@ -112,15 +112,29 @@ public class Paciente2 implements Comparable<Paciente2>{
 						}
 					}
 				}
-			int j;
-			Object x[] = pacientes.toArray();
-			for(j = 0; j< pacientes.size(); j++){
-			System.out.println(x[pacientes.size()-1-j]);
 			
-			}
+			System.out.println(ordenar(pacientes));
 		}
-			
 		
+		/**
+	 	 * Ordenar, coloca en orden los elementos del PriorityQueue
+	 	 * @param PriorityQueue con lista de pacientes
+	 	 * @return String con los pacientes en orden de urgencia
+	 	 */
+		public String ordenar(PriorityQueue<Paciente2> p)
+		{
+			Vector<Paciente2> v= new Vector<Paciente2>();
+			String s="Los pacientes deben ser atendidos en el siguiente orden: \n\n";
+			
+			int j= p.size();
+			for(int i=0; i<j; i++)
+				v.add(p.remove());
+			
+			for(int a=0; a<v.size(); a++)
+				s= s+ v.get(a).toString()+ "\n";
+			
+			return s;
+		}
 		/**
 	 	 * toString
 	 	 * @param ninguno
@@ -138,7 +152,7 @@ public class Paciente2 implements Comparable<Paciente2>{
 	 	 */
 		public int hashCode()
 		{
-			return (70 - codigo);	
+			return codigo;	
 		}
 		
 		/**
